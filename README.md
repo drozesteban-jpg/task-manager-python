@@ -1,40 +1,63 @@
-Task Manager CLI (Python)
-Aplicación simple de línea de comandos para gestionar tareas.
-Permite crear, listar, completar y eliminar tareas, guardándolas en un archivo JSON.
-Proyecto realizado como práctica de Python, modularización y testing básico.
-Cómo ejecutar el programa
-Desde la carpeta raíz del proyecto, ejecutar:
+# Task Manager CLI (Python)
+
+Simple command-line task manager built with Python.
+Allows users to create, list, complete and delete tasks.
+Tasks are stored locally in a JSON file.
+
+This project was created as a Python practice project, focusing on:
+- Code modularization
+- File handling
+- Basic unit testing
+
+## How to run the program
+
+From the root folder of the project, run:
+
 python3 main.py
-Qué se puede hacer
-Agregar tareas
-Ver todas las tareas
-Marcar tareas como completadas
-Eliminar tareas
-Ver tareas pendientes
-Ver tareas completadas
-Las tareas se guardan automáticamente en el archivo tasks.json.
-Ejecutar los tests
-Desde la raíz del proyecto:
-python3 tests/test_tasks.py
-Estructura del proyecto
+
+## Features
+
+- Add tasks
+- List all tasks
+- Mark tasks as completed
+- Delete tasks
+
+All tasks are automatically saved in the file tasks.json.
+
+## Run tests
+
+From the root folder of the project, run:
+
+python3 -m tests.test_tasks
+
+Tests validate the core task management logic.
+
+## Project structure
+
 task_manager_python/
-│
 ├── main.py
+├── README.md
+├── requirements.txt
+├── tasks.json
 ├── task_manager/
-│ ├── cli.py
-│ ├── tasks.py
-│ └── storage.py
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── tasks.py
+│   └── storage.py
 ├── tests/
-│ └── test_tasks.py
-└── tasks.json
-Autor
+│   ├── __init__.py
+│   └── test_tasks.py
+└── .gitignore
+
+## Technologies used
+
+- Python 3
+- JSON file storage
+- Basic unit testing
+
+## Author
+
 Esteban
-
-
-
-
-
-
 
 
 
