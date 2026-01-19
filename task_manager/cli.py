@@ -1,0 +1,11 @@
+def show_menu():
+    print("\n--- Gestor de Tareas ---")
+    print("1. Agregar tarea")
+    print("2. Ver tareas")
+    print("3. Marcar tarea como completada")
+    print("4. Eliminar tarea")
+    print("5. Editar tarea")
+    print("6. Ver tareas pendientes")
+    print("7. Ver tareas completadas")
+    print("8. Exportar tareas a CSV")
+    print("9. Salir")
