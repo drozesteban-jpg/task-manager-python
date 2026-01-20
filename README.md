@@ -26,8 +26,7 @@ Simple administrador de tareas por línea de comandos, desarrollado en Python.
 Clonar el repositorio:
 
     git clone https://github.com/drozesteban-jpg/task-manager-python.git
-cd task-manager-python
-
+ cd task-manager-python
 
 
 
