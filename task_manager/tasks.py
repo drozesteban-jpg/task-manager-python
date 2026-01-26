@@ -39,3 +39,32 @@ def delete_task(tasks, task_id):
         tasks.remove(task)
         return True
     return False
+
+import json
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+TASKS_FILE = BASE_DIR / "tasks.json"
+
+
+def load_tasks():
+    if not TASKS_FILE.exists():
+        return []
+
+    with open(TASKS_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_tasks(tasks):
+    with open(TASKS_FILE, "w", encoding="utf-8") as f:
+        json.dump(tasks, f, indent=2, ensure_ascii=False)
+def list_tasks(tasks):
+    if not tasks:
+        print("📭 No hay tareas.")
+        return
+
+    for task in tasks:
+        status = "✅" if task["done"] else "⏳"
+        print(f'{status} [{task["id"]}] {task["title"]}')
+
+print("tasks.py cargado correctamente")

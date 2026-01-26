@@ -16,26 +16,44 @@ def show_menu():
     print("4. Eliminar tarea")
     print("5. Salir")
 
+def ask_task_id():
+    value = input("🆔 ID de la tarea: ").strip()
+
+    if not value.isdigit():
+        print("❌ Ingresá un número válido.")
+        return None
+
+    return int(value)
+
 
 def main():
+    tasks = load_tasks()
     while True:
         show_menu()
         choice = input("Elegí una opción: ").strip()
 
         if choice == "1":
-            tasks = load_tasks()
+            
             list_tasks(tasks)
 
         elif choice == "2":
-            tasks = load_tasks()
-            title = input("📝 Título de la tarea: ")
+            
+            title = input("📝 Título de la tarea: ").strip()
+
+            if not title:
+              print("❌ El título no puede estar vacío.")
+              continue
+
             add_task(tasks, title)
             save_tasks(tasks)
             print("✅ Tarea agregada.")
 
         elif choice == "3":
-            tasks = load_tasks()
-            task_id = int(input("🆔 ID de la tarea a completar: "))
+            
+            task_id = ask_task_id()
+            if task_id is None:
+             continue
+
 
             if complete_task(tasks, task_id):
                 save_tasks(tasks)
@@ -44,14 +62,16 @@ def main():
                 print("❌ No se encontró una tarea con ese ID.")
 
         elif choice == "4":
-            tasks = load_tasks()
-            task_id = int(input("🆔 ID de la tarea a eliminar: "))
+            task_id = ask_task_id()
+            if task_id is None:
+               continue
 
             if delete_task(tasks, task_id):
-                save_tasks(tasks)
-                print("🗑️ Tarea eliminada.")
+               save_tasks(tasks)
+               print("🗑️ Tarea eliminada.")
             else:
-                print("❌ No se encontró una tarea con ese ID.")
+              print("❌ No se encontró una tarea con ese ID.")
+
 
         elif choice == "5":
             print("👋 Chau!")
